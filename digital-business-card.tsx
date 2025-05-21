@@ -9,7 +9,7 @@ export default function DigitalBusinessCard() {
     <div
       className="min-h-screen flex flex-col items-center p-4 bg-gray-100 relative"
       style={{
-        backgroundImage: "url('sama-bg.jpg')",
+        backgroundImage: "url('/sama-bg.jpg')",
         backgroundSize: "100% 100%",
         backgroundPosition: "center",
       }}
@@ -19,7 +19,7 @@ export default function DigitalBusinessCard() {
         {/* Header */}
         <div className="w-full max-w-2xl bg-[#2593CE] text-center text-white py-16 rounded-t-xl mt-8 flex justify-center items-center">
           <Image
-            src="sama.png"
+            src="/sama.png"
             alt="Sama Logo"
             className="mx-auto h-24 w-auto object-contain"
             width={120}
