@@ -79,7 +79,7 @@ export default function DigitalBusinessCard() {
                   Riyadh, Saudi Arabia
                 </div>
                 <a
-                  href="https://www.google.com/maps?q=24.491393,46.89676"
+                  href="https://maps.app.goo.gl/Fb3XZxcHVcWB5csB8?g_st=aw"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#2593CE] font-semibold transition-all duration-200 cursor-pointer transition-transform hover:scale-110"
