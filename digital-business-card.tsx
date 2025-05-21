@@ -1,95 +1,88 @@
 "use client"
 
-import { useState } from "react"
-import { Phone, Mail, Globe, Briefcase} from "lucide-react"
+import { Phone, Mail, MapPin } from "lucide-react"
 import { Card } from "@/components/ui/card"
+import Image from "next/image"
 
 export default function DigitalBusinessCard() {
-  const [copied, setCopied] = useState<string | null>(null)
-
-  const contactInfo = {
-    name: "Senior Graphic Designer",
-    fullName: "George Faheem Faheem",
-    phone: "01277503400",
-    email: "george.faheem90@gmail.com",
-    website: "www.behance.net",
-    title: "Senior Graphic Designer",
-  }
-
-  const copyToClipboard = (text: string, field: string) => {
-    navigator.clipboard.writeText(text)
-    setCopied(field)
-    setTimeout(() => setCopied(null), 2000)
-  }
-
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 bg-gray-100">
-      {/* Full width header */}
-      <div className="fixed top-0 left-0 right-0 bg-[#2593CE] text-center text-white py-8">
-        <h1 className="text-2xl font-bold mb-2">{contactInfo.fullName}</h1>
-        <p className="text-lg">{contactInfo.name}</p>
-      </div>
-
-      <Card className="w-full max-w-md overflow-hidden bg-white rounded-xl shadow-xl mt-40">
-        {/* Contact details with icons */}
-        <div className="p-6 space-y-6">
-          <div className="flex items-center">
-            <div className="bg-gray-100 p-3 rounded-full mr-4 group cursor-pointer">
-              <Phone className="h-5 w-5 text-[#2593CE] transition-transform duration-200 group-hover:scale-110" />
-            </div>
-            <div className="flex-1">
-              <p className="text-sm text-gray-500">Business</p>
-              <p className="font-medium">{contactInfo.phone}</p>
-            </div>
-            <button onClick={() => copyToClipboard(contactInfo.phone, "phone")} className="text-blue-500">
-              {copied === "phone" ? "Copied!" : ""}
-            </button>
-          </div>
-
-          <hr className="border-gray-200" />
-
-          <div className="flex items-center">
-            <div className="bg-gray-100 p-3 rounded-full mr-4 group cursor-pointer">
-              <Mail className="h-5 w-5 text-[#2593CE] transition-transform duration-200 group-hover:scale-110" />
-            </div>
-            <div className="flex-1">
-              <p className="text-sm text-gray-500">Email</p>
-              <p className="font-medium">{contactInfo.email}</p>
-            </div>
-            <button onClick={() => copyToClipboard(contactInfo.email, "email")} className="text-blue-500">
-              {copied === "email" ? "Copied!" : ""}
-            </button>
-          </div>
-
-          <hr className="border-gray-200" />
-
-          <div className="flex items-center">
-            <div className="bg-gray-100 p-3 rounded-full mr-4 group cursor-pointer">
-              <Globe className="h-5 w-5 text-[#2593CE] transition-transform duration-200 group-hover:scale-110" />
-            </div>
-            <div className="flex-1">
-              <p className="text-sm text-gray-500">Website</p>
-              <p className="font-medium">{contactInfo.website}</p>
-            </div>
-            <button onClick={() => copyToClipboard(contactInfo.website, "website")} className="text-blue-500">
-              {copied === "website" ? "Copied!" : ""}
-            </button>
-          </div>
-
-          <hr className="border-gray-200" />
-
-          <div className="flex items-center">
-            <div className="bg-gray-100 p-3 rounded-full mr-4 group cursor-pointer">
-              <Briefcase className="h-5 w-5 text-[#2593CE] transition-transform duration-200 group-hover:scale-110" />
-            </div>
-            <div className="flex-1">
-              <p className="text-sm text-gray-500">Sama</p>
-              <p className="font-medium">{contactInfo.title}</p>
-            </div>
-          </div>
+    <div
+      className="min-h-screen flex flex-col items-center p-4 bg-gray-100 relative"
+      style={{
+        backgroundImage: "url('/sama-bg.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="absolute inset-0 bg-white/20 backdrop-blur-sm z-0"></div>
+      <div className="relative z-10 w-full flex flex-col items-center">
+        {/* Header */}
+        <div className="w-full max-w-2xl bg-[#2593CE] text-center text-white py-16 rounded-t-xl mt-8 flex justify-center items-center">
+          <Image
+            src="/sama.png"
+            alt="Sama Logo"
+            className="mx-auto h-24 w-auto object-contain"
+            width={120}
+            height={96}
+            draggable="false"
+            priority
+          />
         </div>
 
-      </Card>
+        <Card
+          className="w-full max-w-2xl overflow-hidden rounded-b-xl shadow-xl relative"
+        >
+          <div className="p-6 space-y-6">
+            {/* Phone Section */}
+            <div className="flex items-start gap-4">
+              <div className="bg-gray-100 p-3 rounded-full group cursor-pointer mt-1">
+                <Phone className="h-5 w-5 text-[#2593CE] transition-transform duration-200 group-hover:scale-110" />
+              </div>
+              <div className="flex-1">
+                <p className="text-sm text-gray-500 transition-colors duration-200 hover:text-[#2593CE] cursor-pointer mb-1">Business</p>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:+966920010232" className="font-medium transition-all duration-200 hover:scale-105 hover:text-[#2593CE] cursor-pointer">+966 920 010 232</a>
+                  <a href="tel:+966540212403" className="font-medium transition-all duration-200 hover:scale-105 hover:text-[#2593CE] cursor-pointer">+966 540 212 403</a>
+                  <a href="tel:+966555821884" className="font-medium transition-all duration-200 hover:scale-105 hover:text-[#2593CE] cursor-pointer">+966 555 821 884</a>
+                </div>
+              </div>
+            </div>
+
+            <hr className="border-gray-200" />
+
+            {/* Email Section */}
+            <div className="flex items-start gap-4">
+              <div className="bg-gray-100 p-3 rounded-full group cursor-pointer mt-1">
+                <Mail className="h-5 w-5 text-[#2593CE] transition-transform duration-200 group-hover:scale-110" />
+              </div>
+              <div className="flex-1">
+                <p className="text-sm text-gray-500 transition-colors duration-200 hover:text-[#2593CE] cursor-pointer mb-1">Mail</p>
+                <div className="flex flex-col gap-1">
+                  <a href="mailto:Sales@samajf.com" className="font-medium transition-all duration-200 hover:scale-105 hover:text-[#2593CE] cursor-pointer">Sales@samajf.com</a>
+                  <a href="mailto:a.eid@samajf.com" className="font-medium transition-all duration-200 hover:scale-105 hover:text-[#2593CE] cursor-pointer">a.eid@samajf.com</a>
+                </div>
+              </div>
+            </div>
+
+            <hr className="border-gray-200" />
+
+            {/* Address Section */}
+            <div className="flex items-start gap-4">
+              <div className="bg-gray-100 p-3 rounded-full group cursor-pointer mt-1">
+                <MapPin className="h-5 w-5 text-[#2593CE] transition-transform duration-200 group-hover:scale-110" />
+              </div>
+              <div className="flex-1">
+                <p className="text-sm text-gray-500 transition-colors duration-200 hover:text-[#2593CE] cursor-pointer mb-1">Address</p>
+                <div className="font-medium leading-snug">
+                  Sama aljazeera<br/>
+                  AlMusfah District - Industrial Gate City<br/>
+                  Riyadh, Saudi Arabia
+                </div>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </div>
     </div>
   )
 }
