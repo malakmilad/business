@@ -10,7 +10,7 @@ export default function DigitalBusinessCard() {
       className="min-h-screen flex flex-col items-center p-4 bg-gray-100 relative"
       style={{
         backgroundImage: "url('/sama-bg.jpg')",
-        backgroundSize: "100% 100%",
+        backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
@@ -30,7 +30,7 @@ export default function DigitalBusinessCard() {
         </div>
 
         <Card
-          className="w-full max-w-2xl overflow-hidden rounded-b-xl shadow-xl relative"
+          className="w-full max-w-2xl overflow-hidden shadow-xl relative bg-white/50"
         >
           <div className="p-6 space-y-6">
             {/* Phone Section */}
