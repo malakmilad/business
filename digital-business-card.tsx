@@ -10,11 +10,11 @@ export default function DigitalBusinessCard() {
       className="min-h-screen flex flex-col items-center p-4 bg-gray-100 relative"
       style={{
         backgroundImage: "url('/sama-bg.jpg')",
-        backgroundSize: "cover",
+        backgroundSize: "100% 100%",
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-white/20 backdrop-blur-sm z-0"></div>
+      <div className="absolute inset-0 bg-white/20 z-0"></div>
       <div className="relative z-10 w-full flex flex-col items-center">
         {/* Header */}
         <div className="w-full max-w-2xl bg-[#2593CE] text-center text-white py-16 rounded-t-xl mt-8 flex justify-center items-center">
@@ -73,11 +73,19 @@ export default function DigitalBusinessCard() {
               </div>
               <div className="flex-1">
                 <p className="text-sm text-gray-500 transition-colors duration-200 hover:text-[#2593CE] cursor-pointer mb-1">Address</p>
-                <div className="font-medium leading-snug">
+                <div className="font-medium leading-snug mb-2">
                   Sama aljazeera<br/>
                   AlMusfah District - Industrial Gate City<br/>
                   Riyadh, Saudi Arabia
                 </div>
+                <a
+                  href="https://www.google.com/maps?q=24.491393,46.89676"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#2593CE] font-semibold transition-all duration-200 cursor-pointer transition-transform hover:scale-110"
+                >
+                  Click Here to Open Location Map
+                </a>
               </div>
             </div>
           </div>
